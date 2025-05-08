@@ -1,0 +1,27 @@
+### POST request to create a patient
+POST http://localhost:4000/patients
+Content-Type: application/json
+
+{
+  "name": "Patient",
+  "email": "patient@example.com",
+  "address": "123 Patient Street",
+  "dateOfBirth": "1991-01-19",
+  "registeredDate": "2025-05-07"
+}
+
+###
+
+### POST request to try and create an invalid patient, should returon 400
+POST http://localhost:4000/patients
+Content-Type: application/json
+
+{
+  "name": "Patient",
+  "email": "",
+  "address": "123 Patient Street",
+  "dateOfBirth": "1991-01-19",
+  "registeredDate": "2025-05-07"
+}
+
+###
