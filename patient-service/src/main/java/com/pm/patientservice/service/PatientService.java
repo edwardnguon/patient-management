@@ -45,7 +45,7 @@ public class PatientService {
 
     if (patientRepository.existsByEmailAndIdNot(patientRequestDTO.getEmail(), id)) {
       throw new EmailAlreadyExistsException(
-              "A patient with this email already exists" + patientRequestDTO.getEmail()
+              "A patient with this email already exists " + patientRequestDTO.getEmail()
       );
     }
 
@@ -56,5 +56,15 @@ public class PatientService {
 
     Patient updatedPatient = patientRepository.save(patient);
     return PatientMapper.toDTO(updatedPatient);
+  }
+
+  public void deletePatient(UUID id) {
+    if (!patientRepository.existsById(id)) {
+      throw new PatientNotFoundException(
+              "No patient with this id exists " + id
+      );
+    }
+
+    patientRepository.deleteById(id);
   }
 }
