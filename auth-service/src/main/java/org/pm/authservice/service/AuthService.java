@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
+// Facilitates authentication and token validation
 @Service
 public class AuthService {
 

@@ -9,6 +9,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+// Represents a user entity in the database
 @Entity
 @Table(name = "users")
 public class User {

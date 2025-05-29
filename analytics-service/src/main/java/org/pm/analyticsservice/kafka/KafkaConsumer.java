@@ -13,6 +13,8 @@ public class KafkaConsumer {
   private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(
           KafkaConsumer.class);
 
+  // Sets up kafka listener functionality to consumer events from a kafka producer
+  // Expects protobuf messages
   @KafkaListener(topics = "patient", groupId = "analytics-service")
   public void consumeEvent(byte[] event) {
     try {

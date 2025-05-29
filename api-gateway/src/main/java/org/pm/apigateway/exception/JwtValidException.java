@@ -8,6 +8,7 @@ import org.springframework.web.server.ServerWebExchange;
 
 import reactor.core.publisher.Mono;
 
+// Exception to throw for attempted unauthorized access
 @RestControllerAdvice
 public class JwtValidException {
   @ExceptionHandler(WebClientResponseException.Unauthorized.class)
